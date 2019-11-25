@@ -7,12 +7,6 @@ namespace RJPSoft.HelperExtensions
     {
         #region IEnumerable
 
-        public static IEnumerable<T> NonNullEnumerable<T>(this IEnumerable<T?> collection) where T : class =>
-            NonNull(collection);
-
-        public static IEnumerable<T> NonNullEnumerable<T>(this IEnumerable<T?> collection) where T : struct =>
-            NonNull(collection);
-
         public static IEnumerable<T> NonNull<T>(this IEnumerable<T?> collection) where T : class =>
             collection.Where(t => t != null).Select(t => t!);
 
